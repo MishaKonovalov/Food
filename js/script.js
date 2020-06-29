@@ -404,4 +404,19 @@ window.addEventListener("DOMContentLoaded", () =>{
         });
     });
 
+    setInterval(() => {
+        if(offset == +width.slice(0, width.length - 2) * (slides.length -1)){
+            offset = 0;
+        }else{
+            offset += +width.slice(0, width.length - 2);
+        }
+
+        if (slideIndex == slides.length) {
+            slideIndex = 1;
+        } else {
+            slideIndex++;
+        }
+        activeSlide(dots);
+    }, 4000);
+
 });
